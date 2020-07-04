@@ -24,7 +24,7 @@ const tempData = [
     ],
   },
   {
-    name: "Learn React",
+    name: "Learn React-native",
     color: "#00cec9",
     todos: [
       {
@@ -43,7 +43,7 @@ const tempData = [
   },
   {
     name: "Learn React",
-    color: "#00cec9",
+    color: "#fdcb6e",
     todos: [
       {
         title: "Basics",
