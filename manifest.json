@@ -1,15 +1,22 @@
 {
-    "manifest_version": 2,
+  "manifest_version": 2,
 
-    "name": "GTmetrix Analyzer Plugin",
-    "description": "This extension will analyze a page using GTmetrix",
-    "version": "1.0",
+  "name": "GTmetrix Analyzer Plugin",
+  "description": "This extension will analyze a page using GTmetrix",
+  "version": "1.0",
+  "background": {
+    "scripts": ["./bg.js"]
+  },
+  "browser_action": {
+    "default_popup": "index.html"
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "linux": "Ctrl+Shift+0"
+      }
+    }
+  },
 
-    "browser_action": {
-        "default_popup": "index.html"
-    },
-    "permissions": [
-        "activeTab",
-        "tabs"
-    ]
+  "permissions": ["activeTab", "tabs"]
 }

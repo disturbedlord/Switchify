@@ -1,16 +1,20 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>GTmetrix Analyzer</title>
-    <script src="app.js"></script>
-    <script src="chrome-apis.js"></script>
+    <script src="app.js" defer></script>
 
+    <link href="style.css" rel="stylesheet">
 </head>
 
 <body>
-    <h1>GTmetrix Analyzer</h1>
-    <button id="checkPage">Check this page now!</button>
+
+    <div id="currwin-page" class="tab-content">
+        <input id="currwin-search" class="search" placeholder="Search for Tabs" autofocus>
+
+        <div id="currwin-list-wrapper"></div>
+    </div>
+
 </body>
 
 </html>

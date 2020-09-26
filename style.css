@@ -1,0 +1,56 @@
+body {
+    width: 700px;
+}
+
+html {
+    overflow: scroll;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    /* make scrollbar transparent */
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.search {
+    width: 380px;
+    font-size: 15px;
+    padding: 5px
+}
+
+.site-item {
+    display: flex;
+    justify-content: center;
+    /* padding: 5px; */
+}
+
+.site-icon {
+    width: 20px;
+    height: 20px;
+}
+
+.info-text {
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+}
+
+.tab-text {
+    padding: 0 20px;
+    font-size: 13px;
+}
+
+.close-btn {
+    align-self: center;
+    width: 25px;
+    height: 25px;
+    background-color: rgb(241, 112, 112);
+    border-radius: 5px;
+    border: none;
+}
