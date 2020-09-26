@@ -5,12 +5,14 @@ function setFocus() {
 }
 
 
+
+if (document.readyState === 'complete') {
+    setFocus();
+}
+
 let currwinPage = document.querySelector('#currwin-page');
 
 let currwinListWrapper = document.querySelector('#currwin-list-wrapper');
-
-// chrome.
-
 
 var currentTab;
 
@@ -41,7 +43,6 @@ function loadCurrwinList() {
                 tabText.innerText = escaped_title;
 
                 let infoText = document.createElement('span');
-                // let tab_content = document.getElementById('div');
 
 
                 infoText.className = 'info-text';
@@ -143,9 +144,7 @@ function searchTabs() {
             item.style.display = 'none';
         }
     }
-
-    // if (c == 0)
-    //     searchBar.style.position = "unset";
+    searchBar.style.position = "unset";
 
 }
 
@@ -153,12 +152,7 @@ var newWindow = document.getElementById("openNewWindow")
 newWindow.addEventListener("click", (event) => {
     console.log("opeopoe");
     chrome.windows.create({
-        url: "https://www.google.com"
+
     });
 
 });
-
-if (document.readyState === 'complete') {
-    // good to go!
-    setFocus();
-}
