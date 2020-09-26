@@ -1,5 +1,10 @@
 loadCurrwinList();
 
+function setFocus() {
+    document.getElementById("currwin-search").focus();
+}
+
+
 let currwinPage = document.querySelector('#currwin-page');
 
 let currwinListWrapper = document.querySelector('#currwin-list-wrapper');
@@ -57,7 +62,8 @@ function loadCurrwinList() {
                 // handle the click event for close tab
                 let closeBtn = document.createElement('button');
                 closeBtn.className = 'close-btn';
-                closeBtn.innerHTML = 'x';
+                closeBtn.innerHTML = 'X';
+                closeBtn.style.cursor = "pointer";
 
                 siteItem.appendChild(infoText);
                 siteItem.appendChild(closeBtn);
@@ -87,6 +93,9 @@ function loadCurrwinList() {
                 // append siteList as the dragula containers
                 // drake.containers.push(siteList);
             }
+
+
+
             currwinListWrapper.appendChild(siteList);
             // hate to do this, but this resolves the scrollbar width issue
             let textList = document.querySelectorAll('.info-text');
@@ -95,6 +104,8 @@ function loadCurrwinList() {
             }
         });
     });
+
+
 }
 
 
@@ -119,14 +130,35 @@ searchInput.addEventListener('keyup', searchTabs);
 
 function searchTabs() {
     let filterWord = searchInput.value.toLowerCase();
-
     let siteItems = document.querySelectorAll('#currwin-list-wrapper li');
+    // let searchBar = document.getElementById("searchBar");
+    // searchBar.style.position = fixed;
+    var c = 0;
     for (let item of siteItems) {
         const itemText = item.querySelector('span').textContent;
         if (itemText.toLowerCase().indexOf(filterWord) > -1) {
             item.style.display = 'flex';
+            c++;
         } else {
             item.style.display = 'none';
         }
     }
+
+    // if (c == 0)
+    //     searchBar.style.position = "unset";
+
+}
+
+var newWindow = document.getElementById("openNewWindow")
+newWindow.addEventListener("click", (event) => {
+    console.log("opeopoe");
+    chrome.windows.create({
+        url: "https://www.google.com"
+    });
+
+});
+
+if (document.readyState === 'complete') {
+    // good to go!
+    setFocus();
 }

@@ -1,5 +1,5 @@
 body {
-    width: 700px;
+    width: 400px;
 }
 
 html {
@@ -19,20 +19,45 @@ ul {
 }
 
 .search {
-    width: 380px;
+    width: 100%;
     font-size: 15px;
-    padding: 5px
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.options {
+    display: flex;
+    width: 100%;
+}
+
+#top {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+    padding: 5px;
+    margin: 0 0 10px 0;
+
+    /* height: 50px; */
 }
 
 .site-item {
+
     display: flex;
     justify-content: center;
-    /* padding: 5px; */
+    padding: 0 5px;
+    margin-bottom: 5px;
+    cursor: pointer;
 }
 
 .site-icon {
     width: 20px;
     height: 20px;
+    padding: 3px;
+    border: 1px solid gray;
+    border-radius: 5px;
 }
 
 .info-text {
@@ -53,4 +78,27 @@ ul {
     background-color: rgb(241, 112, 112);
     border-radius: 5px;
     border: none;
+    font-weight: bold;
+}
+
+
+
+/* width */
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
