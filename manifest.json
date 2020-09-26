@@ -4,9 +4,7 @@
   "name": "Switchify",
   "description": "An extension to improve your productivity and have a clutter free browsing session",
   "version": "1.0",
-  "background": {
-    "scripts": ["bg.js"]
-  },
+
   "browser_action": {
     "default_popup": "index.html"
   },
