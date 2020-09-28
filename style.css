@@ -1,5 +1,5 @@
 body {
-    width: 400px;
+    width: 350px;
 }
 
 html {
@@ -39,17 +39,16 @@ ul {
     background-color: white;
     padding: 5px;
     margin: 0 0 10px 0;
-
     /* height: 50px; */
 }
 
 .site-item {
-
     display: flex;
     justify-content: center;
     padding: 0 5px;
     margin-bottom: 5px;
     cursor: pointer;
+    height: 50px;
 }
 
 .site-icon {
@@ -58,6 +57,7 @@ ul {
     padding: 3px;
     border: 1px solid gray;
     border-radius: 5px;
+    background-color: white;
 }
 
 .info-text {
@@ -71,34 +71,49 @@ ul {
     font-size: 13px;
 }
 
+.current-tab-text {
+    color: white;
+    font-weight: bold;
+}
+
+.current-tab {
+    background-color: rgb(70, 70, 223);
+    border-radius: 5px;
+}
+
 .close-btn {
     align-self: center;
     width: 25px;
     height: 25px;
-    background-color: rgb(241, 112, 112);
     border-radius: 5px;
-    border: none;
+    border: 2px solid grey;
     font-weight: bold;
 }
 
 
-
 /* width */
+
 ::-webkit-scrollbar {
     width: 5px;
 }
 
+
 /* Track */
+
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
 
+
 /* Handle */
+
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
 
+
 /* Handle on hover */
+
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }

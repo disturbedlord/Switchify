@@ -20,10 +20,11 @@ function loadCurrwinList() {
     chrome.tabs.query({
         currentWindow: true,
         active: true
-    }, function (tabs) {
+    }, function(tabs) {
         const activeTab = tabs[0];
         // console.log(activeTab);
         currentTab = activeTab;
+        console.log(currentTab);
         currwinListWrapper.innerHTML = ''; // clear the currwin list
         chrome.tabs.query({
             currentWindow: true
@@ -51,6 +52,11 @@ function loadCurrwinList() {
 
                 if (tab.favIconUrl) {
                     var textFront = "<p class='tab-text' >";
+
+                    if (tab.id == currentTab.id) {
+                        textFront = "<p class='tab-text current-tab-text' >";
+                    }
+
                     infoText.innerHTML = '<img class="site-icon" ' +
                         'src="' + tab.favIconUrl + '">' + textFront + tabText.textContent + "</p></span>";
                 } else {
@@ -60,7 +66,6 @@ function loadCurrwinList() {
                         'src="' + imageMissing + '">' + textFront + tabText.textContent + "</p></span>";
                 }
 
-                // handle the click event for close tab
                 let closeBtn = document.createElement('button');
                 closeBtn.className = 'close-btn';
                 closeBtn.innerHTML = 'X';
@@ -69,6 +74,9 @@ function loadCurrwinList() {
                 siteItem.appendChild(infoText);
                 siteItem.appendChild(closeBtn);
 
+                if (tab.id == currentTab.id) {
+                    siteItem.classList.add("current-tab");
+                }
 
 
                 // handle the keyboard event for close tab
@@ -77,6 +85,7 @@ function loadCurrwinList() {
                 });
                 siteItem.addEventListener('mouseleave', (event) => {
                     event.currentTarget.blur();
+
                 });
                 siteItem.addEventListener('keydown', (event) => {
                     if (event.code === 'KeyX') {
@@ -132,8 +141,7 @@ searchInput.addEventListener('keyup', searchTabs);
 function searchTabs() {
     let filterWord = searchInput.value.toLowerCase();
     let siteItems = document.querySelectorAll('#currwin-list-wrapper li');
-    // let searchBar = document.getElementById("searchBar");
-    // searchBar.style.position = fixed;
+
     var c = 0;
     for (let item of siteItems) {
         const itemText = item.querySelector('span').textContent;
@@ -144,15 +152,11 @@ function searchTabs() {
             item.style.display = 'none';
         }
     }
-    searchBar.style.position = "unset";
+    // searchBar.style.position = "unset";
 
 }
 
 var newWindow = document.getElementById("openNewWindow")
 newWindow.addEventListener("click", (event) => {
-    console.log("opeopoe");
-    chrome.windows.create({
-
-    });
-
+    chrome.windows.create({});
 });
