@@ -14,3 +14,6 @@ A chrome Extension to improve User's Browsing Experience, Quickly switch between
  3. The extension should load up and will be listed in the the Chrome Extension's page.
 
 Click on the extension or call it using "**Ctrl + Shift + 0**".
+
+![Extension Screenshot](Switchify/screenshots/image1.jpg?raw=true "Title")
+
