@@ -15,5 +15,5 @@ A chrome Extension to improve User's Browsing Experience, Quickly switch between
 
 Click on the extension or call it using "**Ctrl + Shift + 0**".
 
-![Extension Screenshot](Switchify/screenshots/image1.jpg?raw=true "Title")
+![Extension Screenshot](./screenshots/image1.jpg?raw=true "Title")
 
